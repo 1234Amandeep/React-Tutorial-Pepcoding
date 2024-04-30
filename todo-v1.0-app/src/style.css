@@ -1,0 +1,16 @@
+body {
+  background-color: #443;
+  color: wheat;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.add-new-todo-btn {
+  padding: 10px 25px;
+  border-radius: 5px;
+  background-color: cadetblue;
+}
