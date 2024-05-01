@@ -1,0 +1,32 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "Intersteller",
+      "rating": 9.5,
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "img": "./banner.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Conjuring 3",
+      "rating": 8.5,
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "img": "./banner.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Smile",
+      "rating": 9.8,
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "img": "./banner.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Jurassic Park",
+      "rating": 8.8,
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "img": "./banner.jpg"
+    }
+  ]
+}
