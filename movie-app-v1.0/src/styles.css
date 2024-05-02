@@ -4,31 +4,68 @@ body {
 }
 
 .banner-container {
-  padding-top: 10em;
-  padding-bottom: 2em;
-  background-image: url("./banner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative;
+}
+
+.banner-text {
+  position: relative;
+  opacity: 1;
 }
 
 @media (min-width: 576px) {
   .banner-container {
-    padding-top: 15em;
-    padding-bottom: 3em;
   }
 }
 
 .card {
+  position: relative;
   border: none;
+
+  color: wheat;
+  width: 12rem;
+}
+
+.card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: "";
   background-image: url("./banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.9;
+}
+.card-body {
   color: wheat;
-  width: 12rem;
-  /* padding-bottom: 12em; */
+  position: relative;
+  opacity: 1;
 }
 .card-btn {
-  /* display: none; */
-  margin-top: 11em;
+  opacity: 0;
+  margin-top: 10em;
   margin-bottom: 1em;
+}
+.card:hover > .card-body > .card-btn {
+  opacity: 1;
+}
+
+.loader-container {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+.pagination > li > a {
+  background-color: #443;
+  color: wheat;
 }
