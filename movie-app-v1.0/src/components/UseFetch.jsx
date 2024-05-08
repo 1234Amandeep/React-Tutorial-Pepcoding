@@ -10,14 +10,17 @@ export default class UseFetch extends Component {
       data: null,
       error: null,
       pArr: [1],
-      url: "https://api.themoviedb.org/3/movie/popular?api_key=4b8bf102e2255d866cf5b852dd737fee&language=en-US&page=1",
+      currPage: 1,
     };
   }
 
   getData() {
+    console.log(this.state.currPage);
     // asking for UseFetch fn to get me data from the api by perfoming some asynchronous task
     setTimeout(() => {
-      fetch(this.state.url)
+      fetch(
+        `https://api.themoviedb.org/3/movie/popular?api_key=4b8bf102e2255d866cf5b852dd737fee&language=en-US&page=${this.state.currPage}`
+      )
         .then((res) => {
           if (!res.ok) {
             throw Error("Error fetching movies data");
@@ -46,6 +49,39 @@ export default class UseFetch extends Component {
     this.getData();
   }
 
+  onRightClick() {
+    console.log("inside onRightClick()");
+    this.setState(
+      {
+        pArr: [...this.state.pArr, this.state.pArr.length + 1],
+        currPage: this.state.currPage + 1,
+      },
+      this.getData
+    );
+  }
+
+  onLeftClick() {
+    if (this.state.currPage != 1) {
+      this.setState(
+        {
+          currPage: this.state.currPage - 1,
+        },
+        this.getData
+      );
+    }
+  }
+
+  onSpecificPageChange(pageNum) {
+    if (pageNum != this.state.currPage) {
+      this.setState(
+        {
+          currPage: pageNum,
+        },
+        this.getData
+      );
+    }
+  }
+
   render() {
     return (
       <>
@@ -59,12 +95,21 @@ export default class UseFetch extends Component {
         {this.state.error && <p>{this.state.error}</p>}
         {this.state.data && (
           <>
+            {console.log(this.state.data[0])}
             {/* faith */}
             <Banner movie={findHighRatedMovie(this.state.data)} />
 
             <main className="containers">
               {/* faith */}
-              <MoviesGrid movies={this.state.data} pArr={this.state.pArr} />
+              <MoviesGrid
+                onSpecificPageChange={(pageNum) =>
+                  this.onSpecificPageChange(pageNum)
+                }
+                onLeftClick={() => this.onLeftClick()}
+                onRightClick={() => this.onRightClick()}
+                movies={this.state.data}
+                pArr={this.state.pArr}
+              />
             </main>
           </>
         )}

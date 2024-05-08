@@ -1,6 +1,7 @@
 import "./styles.css";
 import Navbar from "./components/Navbar";
 import UseFetch from "./components/UseFetch";
+import FavoritePage from "./pages/FavoritePage";
 
 export default function App() {
   return (
@@ -26,8 +27,12 @@ export default function App() {
           }}
         />
       </header>
+
+      {/* FAVOURITES PAGE */}
+      <FavoritePage />
+
       {/* faith */}
-      <UseFetch />
+      {/* <UseFetch /> */}
     </>
   );
 }

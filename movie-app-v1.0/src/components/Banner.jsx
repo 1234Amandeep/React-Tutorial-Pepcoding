@@ -13,7 +13,7 @@ export default function Banner(props) {
       />
       <div className=" container banner-text ">
         <h1>{props.movie.title}</h1>
-        <p>{props.movie.description}</p>
+        <p>{props.movie.overview}</p>
       </div>
     </article>
   );
