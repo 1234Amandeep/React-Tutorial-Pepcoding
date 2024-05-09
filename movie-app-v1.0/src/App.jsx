@@ -28,11 +28,11 @@ export default function App() {
         />
       </header>
 
+      {/* faith */}
+      <UseFetch />
+
       {/* FAVOURITES PAGE */}
       <FavoritePage />
-
-      {/* faith */}
-      {/* <UseFetch /> */}
     </>
   );
 }
