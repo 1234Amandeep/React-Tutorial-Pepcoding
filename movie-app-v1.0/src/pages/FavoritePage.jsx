@@ -6,28 +6,28 @@ function FavoritePage() {
       <h1 className="text-center mb-5 display-6">
         <u>Favorite List</u>
       </h1>
-      <div class="container ">
-        <div class="row">
+      <div className="container ">
+        <div className="row">
           {/* TODO: CHANGE THIS HARD CODED VALUES */}
           <div className="col-3">
-            <ul class="list-group">
-              <li class="list-group-item active" aria-current="true">
+            <ul className="list-group">
+              <li className="list-group-item active" aria-current="true">
                 All Genres
               </li>
-              <li class="list-group-item">Sci-Fi</li>
-              <li class="list-group-item">Action</li>
-              <li class="list-group-item">Thriller</li>
-              <li class="list-group-item">Romance</li>
+              <li className="list-group-item">Sci-Fi</li>
+              <li className="list-group-item">Action</li>
+              <li className="list-group-item">Thriller</li>
+              <li className="list-group-item">Romance</li>
             </ul>
           </div>
-          {/* Todo: Make layout using bootstrap's grid system */}
-          <div class="col-9">
+          {/* Todo: CHANGE THIS HARD CODED VALUES */}
+          <div className="col-9">
             <div className="row">
               <div className="col-6">
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Search"
                     aria-label="Search"
                     aria-describedby="basic-addon1"
@@ -35,10 +35,10 @@ function FavoritePage() {
                 </div>
               </div>
               <div className="col-6">
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                   <input
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     placeholder="5"
                     aria-label="popularity"
                     aria-describedby="basic-addon1"
@@ -48,7 +48,7 @@ function FavoritePage() {
             </div>
             <div className="row">
               <div className="col-12">
-                <table class="table">
+                <table className="table">
                   <thead>
                     <tr>
                       <th scope="col-6">Title</th>
@@ -136,17 +136,17 @@ function FavoritePage() {
               </div>
             </div>
             <nav aria-label="...">
-              <ul class="pagination pagination-sm">
-                <li class="page-item active" aria-current="page">
-                  <span class="page-link">1</span>
+              <ul className="pagination pagination-sm">
+                <li className="page-item active" aria-current="page">
+                  <span className="page-link">1</span>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     2
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     3
                   </a>
                 </li>

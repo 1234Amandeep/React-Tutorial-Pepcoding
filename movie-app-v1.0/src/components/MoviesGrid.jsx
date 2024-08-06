@@ -2,9 +2,22 @@
 import Card from "./Card";
 import React, { Component } from "react";
 
+
+// Todo: Figure out how to maintain a favlist both in app's state and in localstorage...
 export default class MoviesGrid extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      cardsFavConfig: new Array(this.props.movies.length).fill({}),
+    };
+  }
+
+  addToFavList(id) {
+    console.log("Add this movie: ", id);
+    // this.setState({cardsFavConfig: })
+  }
+  removeFromFavList(id) {
+    console.log("Remove this movie: ", id);
   }
   render() {
     console.log("inside render() of moviesGrid:", this.props);
@@ -13,9 +26,9 @@ export default class MoviesGrid extends Component {
         <h2>Trending</h2>
         <div className="container overflow-hidden mt-5">
           <div className="row  justify-content-center justify-content-sm-between row-cols-2   row-cols-md-4 ">
-            {this.props.movies.map((movie) => (
+            {this.props.movies.map((movie, index) => (
               // faith
-              <Card key={movie.id} movie={movie} />
+              <Card key={movie.id} movie={movie} isAdded={this.state.cardsFavConfig[index]} addHandler={(movieId) => addToFavList(movieId)} removeHandler={(movieId) = removeFromFavList(movieId)}/>
             ))}
           </div>
         </div>
@@ -31,8 +44,8 @@ export default class MoviesGrid extends Component {
                   Previous
                 </a>
               </li>
-              {this.props.pArr.map((numOfPage) => (
-                <li className="page-item">
+              {this.props.pArr.map((numOfPage, index) => (
+                <li className="page-item" key={index}>
                   <a
                     className="page-link"
                     onClick={() => this.props.onSpecificPageChange(numOfPage)}
